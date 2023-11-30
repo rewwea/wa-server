@@ -2,9 +2,12 @@ import 'colors'
 import dotenv from 'dotenv'
 import express from 'express'
 import morgan from 'morgan'
+
+import { errorHandler, notFound } from './app/middleware/error.middleware.js'
+
 import authRoutes from './app/auth/auth.routes.js'
 import { prisma } from './app/prisma.js'
-import { errorHandler, notFound } from './app/middleware/error.middleware.js'
+import userRoutes from './app/user/user.routes.js'
 
 dotenv.config()
 
@@ -15,6 +18,7 @@ async function main() {
 
 	app.use(express.json())
 	app.use('/api/auth', authRoutes)
+	app.use('/api/users', userRoutes)
 
 	app.use(notFound)
 	app.use(errorHandler)
