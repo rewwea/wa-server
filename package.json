@@ -5,11 +5,12 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"dev": "nodemon ./server.js",
+		"start": "node ./server.js"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/rewwea/workout-map.git"
+		"url": "git+https://github.com/rewwea/wa-server"
 	},
 	"keywords": [
 		"workout",
@@ -18,13 +19,20 @@
 	"author": "rewwea",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/rewwea/workout-map/issues"
+		"url": "https://github.com/rewwea/wa-server/issues"
 	},
-	"homepage": "https://github.com/rewwea/workout-map#readme",
+	"homepage": "https://github.com/rewwea/wa-server#readme",
 	"dependencies": {
 		"@trivago/prettier-plugin-sort-imports": "^4.3.0",
 		"colors": "^1.4.0",
+		"dotenv": "^16.3.1",
+		"env": "^0.0.2",
 		"express": "^4.18.2",
+		"express-async-handler": "^1.2.0",
+		"morgan": "^1.10.0",
 		"prettier": "^3.1.0"
+	},
+	"devDependencies": {
+		"nodemon": "^3.0.1"
 	}
 }
